@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -17,6 +18,8 @@
             font-weight: 500;
             font-style: normal;
         }
+
+        
 
         body {
             background-color: #000000;
@@ -139,13 +142,18 @@
         /* Hero Section with Video Background */
         .hero {
             position: relative;
-            height: 750px;
+            width: 100%;
+            height: 100vh; /* or your desired height */
             overflow: hidden;
         }
 
         .video-background {
+            position: absolute;
             left: 0;
+            top: 0;
             width: 100%;
+            height: 100%;
+            object-fit: cover;
             z-index: 1;
         }
 
@@ -259,8 +267,9 @@
             
         }
         .prnt-img {
-            height: 550px;
-            align-items: center;
+            position: relative;
+            display: inline-block;
+            width: 100%;
         }
 
         .product-img i {
@@ -413,15 +422,21 @@
             z-index: 4;
         }
         
-        .video-btn {
+        .mute-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
             background: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
-            width: 90px;
-            height: 90px;
             border-radius: 50%;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
-            margin-left: 10px;
+        }
+
+        .mute-btn:hover {
+            background: #fb00ff;
         }
 
         .footerimg{
@@ -430,6 +445,7 @@
             order: -1; /* This moves the image to the beginning */
             margin-right: 40px;
         }
+
     </style>
 </head>
 <body>
@@ -444,8 +460,9 @@
                 <nav>
                     <ul>
                         <li><a href="#" onclick="showPage('home')">Home</a></li>
-                        <li><a href="#" onclick="showPage('stickers')">Stickers</a></li>
-                        <li><a href="#" onclick="showPage('prints')">Prints</a></li>
+                        <li><a href="#" onclick="showPage('collabs')">Collabs</a></li>
+                        <li><a href="#" onclick="showPage('produce')">Products</a></li>
+
                     </ul>
                 </nav>
                 <div class="cart-icon">
@@ -460,18 +477,33 @@
     <div id="home" class="page active">
         <!-- Hero Section with Video Background -->
         <div class="hero">
-            <video autoplay muted loop playsinline class="video-background" id="heroVideo" style="margin-top: -20px;">
+            <video autoplay muted loop playsinline class="video-background" style="margin-top: -20px;">
                 <source src="vs 2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="container">
-                <div class="hero-content">
-                </div>
-            </div>
             
         </div>
 
-        <div class="container2">
+        <div class="container2" style="margin-top: -30px;">
+            <h2 class="section-title">LATEST WORK</h2>
+            <div class="product" style="margin-bottom: 30px;">
+                <div class="prnt-img">
+                    <video autoplay muted loop playsinline class="video-background1" style="width: 100%; height: 120%;">
+                        <source src="try2.mp4" type="video/mp4">
+                        
+                    </video>
+                    
+                    <button class="mute-btn" onclick="toggleMute()">
+                        <i class="fas fa-volume-mute"></i>
+                    </button>
+                    
+                </div>
+                <div class="product-info"  style="margin-top: 50px;">
+                    <h3 class="product-title" style="font-size: 50px;">PIECE 021: "RED TERROR"</h3>
+                </div>
+
+                
+            </div>
             <h2 class="section-title">Hot pieceS</h2>
             <div class="products">
                 <div class="product">
@@ -489,6 +521,8 @@
                         <video autoplay muted loop playsinline class="video-background1">
                             <source src="vs17.mp4" type="video/mp4">
                         </video>
+
+                       
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">piece 017: "dont rush"</h3>
@@ -519,10 +553,209 @@
         </div>
     </div>
 
-    <!-- Stickers Page -->
-    <div id="stickers" class="page">
+    <!-- Collabs Page -->
+    <div id="collabs" class="page">
+        <div class="container2"> 
+            <h2 class="section-title" style="margin-top: 150px;">voidspktrum COLLABORATIONS</h2>
+
+            <div class="product" style="margin-bottom: 30px; background-color: yellow;" >
+                <div class="prnt-img">
+                    <div class="slideshow-container"style="background-color: rgba(0, 0, 0);">
+                        <div class="slideshow-track" >
+                            <div class="slide" >
+                                <img src="KR1.HEIC" alt="Behind the scenes 1">
+                            </div>
+                            <div class="slide">
+                                <img src="KR2.HEIC" alt="Behind the scenes 1">
+                            </div>
+                            <div class="slide">
+                                <img src="KR3.HEIC" alt="Behind the scenes 1">
+                            </div>
+                            <!-- Duplicates for seamless looping -->
+                            <div class="slide">
+                                <img src="KR1.HEIC" alt="Behind the scenes 1">
+                            </div>
+                            <div class="slide">
+                                <img src="KR2.HEIC" alt="Behind the scenes 1">
+                            </div>
+                            <div class="slide">
+                                <img src="KR3.HEIC" alt="Behind the scenes 1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title" style="font-size: 50px;">KAFFEINE REPUBLIK X voidspktrum</h3>
+                    <h4 class="product-title" style="font-size: 20px;">I APPROACHED KAFFEINE REPUBLIK FOUNDER MR TARIQ WITH AN OPPORTUNITY TO DECORATE HIS BRAND NEW CAFE.I SHOWED HIM SOME OF MY WORK AND WE QUICKLY STARTED TALKING ABOUT POTENTIAL WORKS BETWEEN US. HE SEEMED VERY CONTENT WITH THE IDEA OF A COLLAB POSTER TO BE FRAMED AND DISPLAYED IN HIS SHOP. TRULY ONE OF MY FAVOURITE PIECES SO FAR.</h4>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+    
+    <!-- Products Page -->
+    <div id="produce" class="page">
+        <style>
+            
+            .reactive{
+                position: absolute;
+                z-index: 1;
+                height: 50%;
+                width: 50%;
+                margin: 250px;
+
+            }
+           
+            .slideshow-container-pr {
+                width: 100%;
+                height: 400px;
+                overflow: hidden;
+                position: relative;
+                filter: blur(6px);
+                display: flex;
+            }
+            
+            .loop-container {
+                max-width: calc(33.33%-1px);
+                flex: 1;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+            }
+            
+            .slideshow-track-pr {
+                display: flex;
+                flex-direction: column;
+                width: 200%;
+                height: 200%;
+                animation: slide-pr 15s linear infinite;
+            }
+            
+            .slide-pr {
+                width: 200px;
+
+                height: 200px;
+                overflow: hidden;
+            }
+            
+            .slide-pr img {
+                width: 80%;
+                height: 80%;
+                object-fit: cover;
+            }
+            
+            @keyframes slide-pr {
+                0% {
+                    transform: translateY(0);
+                }
+                100% {
+                    transform: translateY(-50%);
+                }
+            }
+
+            @keyframes fade {
+                5% { opacity: 0; }
+                25% { opacity: 1; }
+                30% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+
+        </style>
+        
         <div class="container2">
-            <h2 class="section-title"  style="margin-top: 150px" >Stickers</h2>
+
+            <div class="reactive">
+                <div>
+                    <img src="vspr2.png" style="position: absolute;animation: fade 12s infinite 2s;">
+                    <img src="vspr3.png" style="position: absolute;animation: fade 12s infinite 5s;">
+                    <img src="vspr4.png" style="position: absolute;animation: fade 12s infinite 8s;">
+                </div>
+            </div>
+            <div class="prnt-img" style="margin-left: 40px; margin-top: -50px;">
+                <div class="slideshow-container-pr" style="margin-top: 150px;">
+                    <!-- First image loop -->
+                    <div class="loop-container">
+                        <div class="slideshow-track-pr">
+                            <div class="slide-pr">
+                                <img src="prd3.png" alt="Product 1">
+                            </div>
+                            <div class="slide-pr">
+                                <img src="prd3.png" alt="Product 1">
+                            </div>
+                            <div class="slide-pr">
+                                <img src="prd3.png" alt="Product 1">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Second image loop -->
+                    <div class="loop-container">
+                        <div class="slideshow-track-pr">
+                            <div class="slide-pr">
+                                <img src="pr2.png" alt="Product 2">
+                            </div>
+                            <div class="slide-pr">
+                                <img src="pr2.png" alt="Product 2">
+                            </div>
+                            <div class="slide-pr">
+                                <img src="pr2.png" alt="Product 2">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Third image loop -->
+                    <div class="loop-container">
+                        <div class="slideshow-track-pr">
+                            <div class="slide-pr">
+                                <img src="st4.png" alt="Product 3">
+                            </div>
+                            <div class="slide-pr">
+                                <img src="st4.png" alt="Product 3">
+                            </div>
+                            <div class="slide-pr">
+                                <img src="st4.png" alt="Product 3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- fourth image loop -->
+                    <div class="loop-container">
+                        <div class="slideshow-track-pr">
+                            <div class="slide-pr">
+                                <img src="pr3.png" alt="Product 2">
+                            </div>
+                            <div class="slide-pr">
+                                <img src="pr3.png" alt="Product 2">
+                            </div>
+                            <div class="slide-pr">
+                                <img src="pr3.png" alt="Product 2">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- fifth image loop -->
+                    <div class="loop-container">
+                        <div class="slideshow-track-pr">
+                            <div class="slide-pr">
+                                <img src="f.png" alt="Product 3">
+                            </div>
+                            <div class="slide-pr">
+                                <img src="f.png" alt="Product 3">
+                            </div>
+                            <div class="slide-pr">
+                                <img src="f.png" alt="Product 3">
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="container2">
+            <h2 class="section-title"  style="margin-top: 50px" >Stickers</h2>
             <div class="products-stk">
                 <div class="product">
                     <div class="stk-img" style="background-color: #000000;">
@@ -566,17 +799,12 @@
                 </div>
                 
             </div>
-        </div>
-    </div>
-
-    <!-- Prints Page -->
-    <div id="prints" class="page">
-        <div class="container2">
-            <h2 class="section-title" style="margin-top: 150px;" >Prints</h2>
+            
+            <h2 class="section-title" style="margin-top: 50px;" >Prints</h2>
             <div class="products-prnt">
                 <div class="product">
                     <div class="prnt-img">
-                        <img src = "pr1.png" style="height: 550px; width: 370px;">
+                        <img src = "pr1.png" style="height: 100%; width: 100%; ">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">piece 20</h3>
@@ -586,7 +814,7 @@
                 </div>
                 <div class="product">
                     <div class="prnt-img"  style="background-color: #000000;">
-                        <img src = "pr2.png" style="height: 370px; width: 365px; margin-top: 100px;" >
+                        <img src = "pr2.png" style="height: 50%; width: 100%;  margin-top: 130px;" >
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">voidspktrum x House Of Balloons</h3>
@@ -596,7 +824,7 @@
                 </div>
                 <div class="product">
                     <div class="prnt-img" style="background-color: #000000;">
-                        <img src = "pr3.png" style="height: 500px; width: 370px; margin-top: 30px; margin-right: 10px;">
+                        <img src = "pr3.png" style="height: 100%; width: 100%;  ">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">piece 013</h3>
@@ -607,6 +835,17 @@
                 
             </div>
         </div>
+    
+    </div>
+
+    <!-- Stickers Page -->
+    <div id="stickers" class="page">
+        
+    </div>
+
+    <!-- Prints Page -->
+    <div id="prints" class="page">
+        
     </div>
     <!-- Behind Scenes-Page -->
     <div id = "scenes" class = "page"> 
@@ -716,27 +955,27 @@
                 </div>
             </div>
 
-            <div class="product-container" style="display: flex; gap: 160px;">
-                <div class="product" style="width: 500px; height: 750px;">
+            <div class="product-container" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 5vw; max-width: 100%; margin: 0 auto;">
+                <div class="product" style="width: min(500px, 50vw); height: auto;">
                     <div class="prnt-img">
-                        <img src="spbts.pdf" alt="Behind the scenes 1" style="padding: 10px; width: 500px; height: 600px;">
+                        <img src="spbts.pdf" alt="Behind the scenes 1" style="margin-top: 10px; width: 100%; height: auto; max-height: 600px; object-fit: contain;">
                     </div>
-                    <div class="product-info" style="margin-top: 60px;">
-                        <h3 class="product-title" style="font-size: 50px;">Scraped piece:"Horse"</h3>
+                    <div class="product-info" style="margin-top: 10px;">
+                        <h3 class="product-title" style="font-size: min(50px, 5vw);">Scraped piece:"Horse"</h3>
                     </div>
                 </div>
             
-                <div class="product" style="width: 500px; height: 750px;">
+                <div class="product" style="width: min(500px, 50vw); height: auto;">
                     <div class="prnt-img">
-                        <img src="lgo.pdf" alt="Behind the scenes 1" style="padding: 10px; width: 500px; height: 600px;">
+                        <img src="lgo.pdf" alt="Behind the scenes 1" style="margin-top: 10px; width: 100%; height: auto; max-height: 600px; object-fit: contain;">
                     </div>
-                    <div class="product-info" style="margin-top: 60px;">
-                        <h3 class="product-title" style="font-size: 50px;">voidspktrum original logo</h3>
+                    <div class="product-info" style="margin-top: 10px;">
+                        <h3 class="product-title" style="font-size: min(50px, 5vw);">voidspktrum original logo</h3>
                     </div>
                 </div>
             </div>
 
-            <div class="product" style="margin-bottom: 30px;">
+            <div class="product" style="margin-top: 30px;">
                 <div class="prnt-img">
                     <div class="slideshow-container">
                         <div class="slideshow-track-PE">
@@ -822,6 +1061,20 @@
             });
         });
        
+
+        function toggleMute() {
+            const video = document.querySelector('.video-background1');
+            const btnIcon = document.querySelector('.mute-btn i');
+  
+            if (video.muted) {
+                video.muted = false;
+                btnIcon.className = 'fas fa-volume-up';
+            } else {
+                video.muted = true;
+                btnIcon.className = 'fas fa-volume-mute';
+                
+            }
+        }
        
         // Automatically mute the video on mobile devices for better UX
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
