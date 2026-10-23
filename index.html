@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>voidspktrum</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         * {
@@ -18,8 +17,6 @@
             font-weight: 500;
             font-style: normal;
         }
-
-        
 
         body {
             background-color: #000000;
@@ -412,8 +409,6 @@
             border-top: 1px solid #444;
         }
 
-       
-        
         /* Video controls */
         .video-controls {
             position: absolute;
@@ -1176,6 +1171,285 @@
         </div>
     </footer>
 
+    <!-- =====================================================
+         MOBILE STYLES
+         Placed last on purpose so they override the page-level
+         <style> blocks above. Desktop (>768px) is unaffected.
+         ===================================================== -->
+    <style>
+        @media (max-width: 768px) {
+
+            html, body {
+                overflow-x: hidden;
+                width: 100%;
+                -webkit-text-size-adjust: 100%;
+            }
+
+            /* Nothing is allowed to be wider than the screen */
+            img, video {
+                max-width: 100%;
+            }
+            .page, .container, .container1, .container2, .product {
+                max-width: 100%;
+            }
+            .container, .container1, .container2 {
+                padding: 0 14px;
+            }
+
+            /* ---------- Header ---------- */
+            .header-content {
+                padding: 10px 0;
+                gap: 8px;
+            }
+            .logo {
+                width: 80px;
+                height: 28px;
+                flex-shrink: 0;
+            }
+            nav {
+                margin-left: 0;
+            }
+            nav ul li {
+                margin-left: 14px;
+            }
+            nav ul li a {
+                font-size: 16px;
+            }
+            .cart-icon {
+                width: 28px;
+                height: 28px;
+                flex-shrink: 0;
+            }
+            .cart-icon:hover {
+                transform: none;
+            }
+
+            /* ---------- Pages / text sizes ---------- */
+            .page {
+                padding: 12px 0;
+            }
+            .section-title {
+                font-size: 22px;
+                margin-bottom: 18px;
+            }
+            #collabs .section-title,
+            #scenes .section-title {
+                margin-top: 70px !important;
+            }
+            .product-title {
+                font-size: 17px;
+                line-height: 1.2;
+                margin-bottom: 6px;
+            }
+            .product-title[style*="font-size: 50px"],
+            .product-title[style*="font-size: min(50px"],
+            .product-title[style*="font-size: min(45px"] {
+                font-size: 22px !important;
+            }
+            .product-title[style*="font-size: 20px"] {
+                font-size: 14px !important;
+                line-height: 1.3;
+            }
+            .product-info {
+                padding: 12px;
+            }
+            .product:hover {
+                transform: none;
+            }
+
+            /* ---------- Home: hero video (no zoom, full frame) ---------- */
+            .hero {
+                height: auto;
+                aspect-ratio: 16 / 9;
+                margin-top: 56px;
+                background: #000;
+            }
+            .hero .video-background {
+                margin-top: 0 !important;
+                object-fit: contain;
+            }
+
+            /* ---------- Home: latest work video ---------- */
+            #home .container2 {
+                margin-top: 16px !important;
+            }
+            #home .prnt-img > video {
+                display: block;
+                width: 100% !important;
+                height: auto !important;
+                aspect-ratio: 16 / 9;
+                object-fit: contain;
+            }
+            #home .product-info[style*="margin-top: 50px"] {
+                margin-top: 0 !important;
+            }
+            .mute-btn {
+                width: 32px;
+                height: 32px;
+                bottom: 8px;
+                right: 8px;
+            }
+
+            /* ---------- Home: hot pieces, 2 per row ---------- */
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .product-img {
+                height: auto;
+                aspect-ratio: 5 / 8;
+                background: #000;
+            }
+            .product-img .video-background1 {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+            .products .product-info {
+                margin-top: 0;
+                padding: 8px;
+            }
+            .products .product-title {
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+
+            /* ---------- Collabs / Behind the scenes ---------- */
+            .product-container {
+                gap: 20px !important;
+                justify-content: center;
+            }
+            .product-container .product {
+                width: 100% !important;
+            }
+            .product-container .prnt-img img {
+                margin-top: 0 !important;
+            }
+
+            /* Slideshows */
+            .slideshow-track,
+            .slideshow-track-PE {
+                width: max-content;
+            }
+            .slide {
+                width: 200px;
+                height: 270px;
+            }
+            .slide-PE {
+                width: 260px;
+                height: 190px;
+            }
+            .slideshow-container {
+                margin: 10px 0;
+            }
+
+            /* ---------- Products page ---------- */
+            .prnt-img[style*="margin-left: 40px"] {
+                margin-left: 0 !important;
+                margin-top: 0 !important;
+            }
+            .slideshow-container-pr {
+                height: 260px;
+                margin-top: 70px !important;
+            }
+            .reactive {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 70%;
+                height: auto;
+                margin: 105px 0 0 0;
+            }
+            .reactive > div {
+                position: relative;
+                width: 100%;
+                aspect-ratio: 1 / 1;
+            }
+            .reactive img {
+                position: absolute !important;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            /* Stickers + prints: one per row, images fit the card */
+            .products-stk,
+            .products-prnt {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .stk-img {
+                height: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            .stk-img img {
+                height: auto !important;
+                width: auto !important;
+                max-width: 85% !important;
+                max-height: 170px !important;
+                margin: 0 !important;
+                object-fit: contain;
+            }
+            .products-prnt .prnt-img img {
+                display: block;
+                height: auto !important;
+                width: 100% !important;
+                margin-top: 0 !important;
+                object-fit: contain;
+            }
+            .products-prnt .prnt-img[style*="background-color"] img {
+                padding: 16px 0;
+            }
+
+            /* ---------- Footer (centered) ---------- */
+            footer {
+                padding: 24px 0;
+                margin-top: 30px;
+                text-align: center;
+            }
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-section,
+            .footer-section[style] {
+                min-width: 0;
+                width: 100%;
+                margin-left: 0 !important;
+                text-align: center;
+            }
+            .footer-section h3:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .social-icons {
+                display: flex;
+                justify-content: center;
+            }
+            .social-icons a {
+                margin: 0 5px;
+            }
+            .footerimg {
+                order: 0;
+                display: block;
+                width: 100%;
+                max-width: 260px;
+                height: auto;
+                margin: 0 auto 20px auto;
+            }
+        }
+
+        @media (max-width: 400px) {
+            nav ul li { margin-left: 10px; }
+            nav ul li a { font-size: 14px; }
+            .logo { width: 64px; }
+        }
+    </style>
+
     <script>
         //Function to show the selected page and hide others
         function showPage(pageId) {
@@ -1201,7 +1475,7 @@
        
 
         function toggleMute() {
-            const video = document.querySelector('.video-background1');
+            const video = document.querySelector('.prnt-img .video-background1');
             const btnIcon = document.querySelector('.mute-btn i');
   
             if (video.muted) {
@@ -1215,10 +1489,15 @@
         }
        
         // Automatically mute the video on mobile devices for better UX
+        // (fixed: the original referenced `video` and `volumeIcon` before they existed, which threw an error on phones)
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            video.muted = true;
-            volumeIcon.classList.add('fa-volume-mute');
-            volumeIcon.classList.remove('fa-volume-up');
+            const mobileVideo = document.querySelector('.prnt-img .video-background1');
+            const volumeIcon = document.querySelector('.mute-btn i');
+            if (mobileVideo) mobileVideo.muted = true;
+            if (volumeIcon) {
+                volumeIcon.classList.add('fa-volume-mute');
+                volumeIcon.classList.remove('fa-volume-up');
+            }
         }
 
     </script>
